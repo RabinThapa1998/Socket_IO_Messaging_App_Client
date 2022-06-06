@@ -13,3 +13,24 @@
 .headerTitle {
   @apply text-6xl lg:text-7xl leading-none font-extrabold tracking-tight  mb-8 sm:mb-10 text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-purple-800;
 }
+
+.formContainer {
+  @apply w-1/2 mx-auto  py-3 px-5;
+}
+
+.button {
+  @apply w-full sm:w-auto flex-none bg-blue-600 hover:bg-blue-700 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200 mx-auto;
+}
+
+.btnContainer {
+  @apply flex flex-col items-center justify-center my-5;
+}
+.formGroup {
+  @apply my-3 w-full flex flex-col;
+}
+.chatBox {
+  @apply bg-white h-96 w-1/2 rounded-lg py-8 px-10;
+}
+.chatContainer {
+  @apply flex  justify-between items-center flex-row-reverse;
+}
