@@ -1,0 +1,21 @@
+.homepage {
+  @apply min-h-screen bg-gray-200 w-full px-4  py-10;
+}
+.h3 {
+  @apply font-medium text-xl text-center;
+}
+.chatbox {
+  @apply h-96 my-16 w-full bg-white border rounded-3xl px-4 py-10;
+}
+.messagetypingbox {
+  @apply w-full;
+}
+.chatfields {
+  @apply flex flex-row justify-center items-center w-full;
+}
+.inputfield {
+  @apply w-full rounded-full outline-none border-none;
+}
+.submit {
+  @apply text-xs bg-green-300 border-2 h-10 w-10 rounded-full;
+}

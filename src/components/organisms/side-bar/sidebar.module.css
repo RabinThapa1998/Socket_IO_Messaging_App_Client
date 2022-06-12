@@ -1,0 +1,7 @@
+.sidebar {
+  @apply h-screen w-80 flex flex-col items-center justify-start bg-white px-2;
+}
+
+.sidebarContanier {
+  @apply flex flex-col items-center justify-start mt-20;
+}

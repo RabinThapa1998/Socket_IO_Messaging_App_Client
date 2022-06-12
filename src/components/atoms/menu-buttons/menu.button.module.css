@@ -1,0 +1,18 @@
+.menuBtn {
+  @apply flex justify-start items-center bg-white border-b w-full px-2 relative my-3 py-3;
+}
+
+.p {
+  @apply text-base font-medium;
+}
+.profile {
+  @apply border bg-slate-100 rounded-full h-12 w-12 relative;
+}
+
+.username {
+  @apply ml-2 flex flex-col items-start;
+}
+
+.status {
+  @apply bg-green-300 h-3 w-3 rounded-full  absolute bottom-0 right-0;
+}
