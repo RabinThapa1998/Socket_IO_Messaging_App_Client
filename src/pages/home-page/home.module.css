@@ -19,3 +19,9 @@
 .submit {
   @apply text-xs bg-green-300 border-2 h-10 w-10 rounded-full;
 }
+.messagesent {
+  @apply bg-black rounded-full h-12 text-white text-2xl flex justify-start items-center px-4 my-1;
+}
+.messagereceived {
+  @apply bg-green-500 rounded-full h-12 text-white text-2xl flex justify-start items-center px-4 my-1;
+}
