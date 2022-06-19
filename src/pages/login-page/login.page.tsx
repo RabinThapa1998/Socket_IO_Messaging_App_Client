@@ -34,7 +34,6 @@ function LoginPage() {
     const sendData = { username, password };
     mutate(JSON.stringify(sendData));
   };
-  // console.log("/*/*/*/*/*", mutData);
   return (
     <div className={styles.container}>
       <div className={styles.loginBox}>
