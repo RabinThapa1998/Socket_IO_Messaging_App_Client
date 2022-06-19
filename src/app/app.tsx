@@ -21,14 +21,27 @@ import styles from "./app.module.css";
 import MessageForm from "components/organisms/form";
 import Sidebar from "components/organisms/side-bar";
 import HomePage from "../../src/pages/home-page";
+import LoginPage from "../../src/pages/login-page";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+const queryClient = new QueryClient();
 
 const App = (): JSX.Element => {
   return (
-    <main className={styles.main}>
-      {/* <MessageForm /> */}
-      <Sidebar />
-      <HomePage />
-    </main>
+    <BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <main className={styles.main}>
+          {/* <MessageForm /> */}
+          {/* <Sidebar /> */}
+          {/* <HomePage /> */}
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/home" element={<HomePage />} />
+          </Routes>
+        </main>
+      </QueryClientProvider>
+    </BrowserRouter>
   );
 };
 

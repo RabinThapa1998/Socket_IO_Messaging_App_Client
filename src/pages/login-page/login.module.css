@@ -1,0 +1,12 @@
+.container {
+  @apply w-screen h-screen;
+}
+.loginBox,
+.loginForm,
+.loginForm_group {
+  @apply flex flex-col justify-center items-center;
+}
+
+.loginForm_label {
+  @apply text-xl;
+}
