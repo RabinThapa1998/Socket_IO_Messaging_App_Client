@@ -1,12 +1,17 @@
 .container {
-  @apply w-screen h-screen;
+  @apply h-screen w-full flex flex-col justify-center items-center;
 }
-.loginBox,
-.loginForm,
-.loginForm_group {
+.loginForm {
   @apply flex flex-col justify-center items-center;
 }
+.loginForm_group {
+  @apply my-4 flex flex-col justify-center items-center;
+}
 
-.loginForm_label {
-  @apply text-xl;
+.loginForm .loginForm_label {
+  @apply text-xl text-left w-full;
+}
+
+.loginBox {
+  @apply border h-1/2 w-1/4 bg-slate-200 rounded-md flex flex-col justify-center items-center;
 }
