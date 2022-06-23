@@ -9,9 +9,12 @@ export default defineConfig((configEnv) => {
     plugins: [react()],
     resolve: {
       alias: {
+        src: resolve(__dirname, "src"),
+        public: resolve(__dirname, "public"),
         app: resolve(__dirname, "src", "app"),
         components: resolve(__dirname, "src", "components"),
         hooks: resolve(__dirname, "src", "hooks"),
+        pages: resolve(__dirname, "src", "pages"),
       },
     },
     css: {
