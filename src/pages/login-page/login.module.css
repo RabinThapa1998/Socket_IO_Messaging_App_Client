@@ -13,5 +13,5 @@
 }
 
 .loginBox {
-  @apply border h-1/2 w-1/4 bg-slate-200 rounded-md flex flex-col justify-center items-center;
+  @apply border h-auto w-1/4 bg-slate-200 rounded-md flex flex-col justify-center items-center py-10;
 }

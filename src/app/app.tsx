@@ -21,9 +21,11 @@ import styles from "./app.module.css";
 import MessageForm from "components/organisms/form";
 import Sidebar from "components/organisms/side-bar";
 import HomePage from "../../src/pages/home-page";
-import LoginPage from "../../src/pages/login-page";
+
+import LoginPage from "pages/login-page";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DashboardPage from "src/pages/dashboard";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +40,7 @@ const App = (): JSX.Element => {
           <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route path="/home" element={<HomePage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
           </Routes>
         </main>
       </QueryClientProvider>

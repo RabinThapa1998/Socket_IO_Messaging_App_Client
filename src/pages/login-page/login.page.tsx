@@ -1,39 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "components/atoms/button";
 import styles from "./login.module.css";
 import { useQuery, useMutation } from "react-query";
 import axios from "axios";
+import Loader from "components/atoms/loader";
+import { useNavigate } from "react-router-dom";
 
 const postFunction = (data) =>
-  axios
-    .post(import.meta.env.VITE_BASE_URL, data, {
-      headers: {
-        "Content-Type": "application/json",
-        crossDomain: true,
-      },
-    })
-    .catch((error) => {
-      console.log(error.response.data);
-    });
+  axios.post(import.meta.env.VITE_BASE_URL, data, {
+    headers: {
+      "Content-Type": "application/json",
+      crossDomain: true,
+    },
+  });
+// .catch((error) => {
+//   console.log(">>>>>>>>>>...", error.response.data);
+// });
 
 function LoginPage() {
+  const [btnState, setBtnState] = useState(false);
+  const navigate = useNavigate();
+
   const {
     mutate,
     data: mutData,
     error,
-  } = useMutation(postFunction, {
+  }: { mutate: any; data: any; error: any } = useMutation(postFunction, {
     onError: (error) => {
-      console.log("mutationerror", error);
+      console.log("mutationerror************88", error);
     },
   });
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const handleLogin = (e) => {
+    setBtnState(true);
     e.preventDefault();
     const sendData = { username, password };
     mutate(JSON.stringify(sendData));
   };
+
+  useEffect(() => {
+    setBtnState(false);
+    if (mutData) {
+      navigate("/dashboard");
+    }
+  }, [mutData, error]);
+
   return (
     <div className={styles.container}>
       <div className={styles.loginBox}>
@@ -58,9 +71,12 @@ function LoginPage() {
               value={password}
             />
           </div>
-          <Button onClick={handleLogin} type="submit">
+          <Button onClick={handleLogin} type="submit" disabled={btnState}>
             Login
           </Button>
+          {btnState && <Loader />}
+          {mutData && <div>{mutData.data.message}</div>}
+          {error && <div>{error?.response.data.error}</div>}
         </form>
       </div>
     </div>

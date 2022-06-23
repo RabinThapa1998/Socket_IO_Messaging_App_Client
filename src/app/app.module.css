@@ -84,5 +84,5 @@
 }
 
 .main {
-  @apply h-full w-full flex flex-row justify-start;
+  @apply h-full w-full;
 }
