@@ -5,17 +5,15 @@ import { useQuery, useMutation } from "react-query";
 import axios from "axios";
 import Loader from "components/atoms/loader";
 import { useNavigate } from "react-router-dom";
+import { config } from "src/config";
 
 const postFunction = (data) =>
-  axios.post(import.meta.env.VITE_BASE_URL, data, {
+  axios.post(config.VITE_BASE_URL, data, {
     headers: {
       "Content-Type": "application/json",
       crossDomain: true,
     },
   });
-// .catch((error) => {
-//   console.log(">>>>>>>>>>...", error.response.data);
-// });
 
 function LoginPage() {
   const [btnState, setBtnState] = useState(false);
