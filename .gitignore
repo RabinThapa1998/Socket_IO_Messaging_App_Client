@@ -4,3 +4,4 @@ dist
 .env.local
 .env
 yarn.lock
+dev.ts
