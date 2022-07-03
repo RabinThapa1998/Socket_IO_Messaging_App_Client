@@ -3,9 +3,8 @@ import Button from "components/atoms/button";
 import styles from "./login.module.css";
 import { useQuery, useMutation } from "react-query";
 import axios from "axios";
-import Loader from "components/atoms/loader";
 import { useNavigate } from "react-router-dom";
-import { config } from "src/config";
+import { config } from "../../config";
 
 const postFunction = (data) =>
   axios.post(config.VITE_BASE_URL, data, {
@@ -72,7 +71,7 @@ function LoginPage() {
           <Button onClick={handleLogin} type="submit" disabled={btnState}>
             Login
           </Button>
-          {btnState && <Loader />}
+
           {mutData && <div>{mutData.data.message}</div>}
           {error && <div>{error?.response.data.error}</div>}
         </form>
